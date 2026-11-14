@@ -1,0 +1,11 @@
+node_modules/
+*.log
+out.log
+err.log
+service.log
+.DS_Store
+Thumbs.db
+# 本机真实配置（含服务清单、私有名称）绝不进 Git
+*.local.json
+*.tmp
+_split-config.js

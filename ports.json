@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "appName": "PortDeck",
+  "ports": [
+    {
+      "port": 22,
+      "name": "SSH",
+      "cat": "系统",
+      "note": "OpenSSH 服务端",
+      "url": ""
+    },
+    {
+      "port": 3000,
+      "name": "Vite 开发服务器",
+      "cat": "工具",
+      "note": "前端热更新",
+      "url": "http://127.0.0.1:3000/"
+    },
+    {
+      "port": 3306,
+      "name": "MySQL",
+      "cat": "工具",
+      "note": "本地数据库",
+      "url": ""
+    },
+    {
+      "port": 5173,
+      "name": "Vite 开发服务器",
+      "cat": "工具",
+      "note": "前端预览",
+      "url": "http://127.0.0.1:5173/"
+    },
+    {
+      "port": 8080,
+      "name": "示例 API 服务",
+      "cat": "工具",
+      "note": "本地接口调试",
+      "url": "http://127.0.0.1:8080/"
+    }
+  ]
+}

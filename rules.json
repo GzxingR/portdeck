@@ -1,0 +1,1213 @@
+{
+  "_comment": "自动识别规则库。匹配顺序：ports.json 手动标注 → 端口区间 → 命令行关键字 → 进程名 → 可执行文件元数据 → HTTP 指纹 → 服务名 → 已知端口库。",
+  "portRules": [
+    {
+      "range": [
+        3000,
+        3999
+      ],
+      "name": "开发服务",
+      "cat": "工具",
+      "note": "常见前端/后端开发端口"
+    },
+    {
+      "range": [
+        5000,
+        5999
+      ],
+      "name": "开发服务",
+      "cat": "工具",
+      "note": "常见开发端口"
+    },
+    {
+      "range": [
+        8000,
+        8999
+      ],
+      "name": "本地服务",
+      "cat": "工具",
+      "note": "常见本地服务端口"
+    },
+    {
+      "range": [
+        9000,
+        9999
+      ],
+      "name": "本地服务",
+      "cat": "工具",
+      "note": "常见本地服务端口"
+    },
+    {
+      "range": [
+        49152,
+        65535
+      ],
+      "name": "动态端口",
+      "cat": "系统",
+      "note": "Windows 临时/动态端口范围"
+    }
+  ],
+  "processRules": [
+    {
+      "field": "cmd",
+      "match": "vite",
+      "name": "Vite 开发服务器",
+      "cat": "工具",
+      "note": "前端热更新"
+    },
+    {
+      "field": "cmd",
+      "match": "next",
+      "name": "Next.js",
+      "cat": "工具",
+      "note": "React 全栈框架"
+    },
+    {
+      "field": "cmd",
+      "match": "nuxt",
+      "name": "Nuxt",
+      "cat": "工具",
+      "note": "Vue 全栈框架"
+    },
+    {
+      "field": "cmd",
+      "match": "webpack",
+      "name": "Webpack DevServer",
+      "cat": "工具",
+      "note": "前端构建"
+    },
+    {
+      "field": "cmd",
+      "match": "rollup",
+      "name": "Rollup",
+      "cat": "工具",
+      "note": "前端打包"
+    },
+    {
+      "field": "cmd",
+      "match": "parcel",
+      "name": "Parcel",
+      "cat": "工具",
+      "note": "零配置打包"
+    },
+    {
+      "field": "cmd",
+      "match": "astro",
+      "name": "Astro",
+      "cat": "工具",
+      "note": "内容站点框架"
+    },
+    {
+      "field": "cmd",
+      "match": "remix",
+      "name": "Remix",
+      "cat": "工具",
+      "note": "React 框架"
+    },
+    {
+      "field": "cmd",
+      "match": "svelte",
+      "name": "SvelteKit",
+      "cat": "工具",
+      "note": "Svelte 框架"
+    },
+    {
+      "field": "cmd",
+      "match": "storybook",
+      "name": "Storybook",
+      "cat": "工具",
+      "note": "组件文档"
+    },
+    {
+      "field": "cmd",
+      "match": "jupyter",
+      "name": "Jupyter",
+      "cat": "工具",
+      "note": "笔记本服务"
+    },
+    {
+      "field": "cmd",
+      "match": "gradio",
+      "name": "Gradio",
+      "cat": "模型",
+      "note": "AI 模型演示界面"
+    },
+    {
+      "field": "cmd",
+      "match": "streamlit",
+      "name": "Streamlit",
+      "cat": "模型",
+      "note": "数据应用框架"
+    },
+    {
+      "field": "cmd",
+      "match": "tensorboard",
+      "name": "TensorBoard",
+      "cat": "模型",
+      "note": "训练可视化"
+    },
+    {
+      "field": "cmd",
+      "match": "ollama",
+      "name": "Ollama",
+      "cat": "模型",
+      "note": "本地大模型"
+    },
+    {
+      "field": "cmd",
+      "match": "lmstudio",
+      "name": "LM Studio",
+      "cat": "模型",
+      "note": "本地大模型"
+    },
+    {
+      "field": "cmd",
+      "match": "llama.cpp",
+      "name": "llama.cpp",
+      "cat": "模型",
+      "note": "本地推理"
+    },
+    {
+      "field": "cmd",
+      "match": "vllm",
+      "name": "vLLM",
+      "cat": "模型",
+      "note": "高吞吐推理服务"
+    },
+    {
+      "field": "cmd",
+      "match": "comfyui",
+      "name": "ComfyUI",
+      "cat": "模型",
+      "note": "图像生成工作流"
+    },
+    {
+      "field": "cmd",
+      "match": "auto1111",
+      "name": "Stable Diffusion WebUI",
+      "cat": "模型",
+      "note": "图像生成"
+    },
+    {
+      "field": "cmd",
+      "match": "docker",
+      "name": "Docker",
+      "cat": "工具",
+      "note": "容器端口映射"
+    },
+    {
+      "field": "cmd",
+      "match": "containerd",
+      "name": "containerd",
+      "cat": "工具",
+      "note": "容器运行时"
+    },
+    {
+      "field": "cmd",
+      "match": "mysql",
+      "name": "MySQL",
+      "cat": "工具",
+      "note": "关系数据库"
+    },
+    {
+      "field": "cmd",
+      "match": "postgres",
+      "name": "PostgreSQL",
+      "cat": "工具",
+      "note": "关系数据库"
+    },
+    {
+      "field": "cmd",
+      "match": "redis",
+      "name": "Redis",
+      "cat": "工具",
+      "note": "内存缓存"
+    },
+    {
+      "field": "cmd",
+      "match": "mongo",
+      "name": "MongoDB",
+      "cat": "工具",
+      "note": "文档数据库"
+    },
+    {
+      "field": "cmd",
+      "match": "elastic",
+      "name": "Elasticsearch",
+      "cat": "工具",
+      "note": "搜索索引"
+    },
+    {
+      "field": "cmd",
+      "match": "clickhouse",
+      "name": "ClickHouse",
+      "cat": "工具",
+      "note": "列式数据库"
+    },
+    {
+      "field": "cmd",
+      "match": "influx",
+      "name": "InfluxDB",
+      "cat": "工具",
+      "note": "时序数据库"
+    },
+    {
+      "field": "cmd",
+      "match": "rabbitmq",
+      "name": "RabbitMQ",
+      "cat": "工具",
+      "note": "消息队列"
+    },
+    {
+      "field": "cmd",
+      "match": "kafka",
+      "name": "Kafka",
+      "cat": "工具",
+      "note": "消息流平台"
+    },
+    {
+      "field": "cmd",
+      "match": "zookeeper",
+      "name": "ZooKeeper",
+      "cat": "工具",
+      "note": "分布式协调"
+    },
+    {
+      "field": "cmd",
+      "match": "minio",
+      "name": "MinIO",
+      "cat": "工具",
+      "note": "对象存储"
+    },
+    {
+      "field": "cmd",
+      "match": "nginx",
+      "name": "Nginx",
+      "cat": "工具",
+      "note": "Web 服务器"
+    },
+    {
+      "field": "cmd",
+      "match": "apache",
+      "name": "Apache",
+      "cat": "工具",
+      "note": "Web 服务器"
+    },
+    {
+      "field": "cmd",
+      "match": "caddy",
+      "name": "Caddy",
+      "cat": "工具",
+      "note": "Web 服务器"
+    },
+    {
+      "field": "cmd",
+      "match": "clash",
+      "name": "Clash",
+      "cat": "代理",
+      "note": "代理内核"
+    },
+    {
+      "field": "cmd",
+      "match": "mihomo",
+      "name": "mihomo",
+      "cat": "代理",
+      "note": "代理内核"
+    },
+    {
+      "field": "cmd",
+      "match": "v2ray",
+      "name": "v2ray",
+      "cat": "代理",
+      "note": "代理内核"
+    },
+    {
+      "field": "cmd",
+      "match": "xray",
+      "name": "Xray",
+      "cat": "代理",
+      "note": "代理内核"
+    },
+    {
+      "field": "cmd",
+      "match": "sing-box",
+      "name": "sing-box",
+      "cat": "代理",
+      "note": "代理内核"
+    },
+    {
+      "field": "cmd",
+      "match": "trojan",
+      "name": "Trojan",
+      "cat": "代理",
+      "note": "代理服务"
+    },
+    {
+      "field": "cmd",
+      "match": "gost",
+      "name": "gost",
+      "cat": "代理",
+      "note": "隧道转发"
+    },
+    {
+      "field": "cmd",
+      "match": "frpc",
+      "name": "frp 客户端",
+      "cat": "代理",
+      "note": "内网穿透"
+    },
+    {
+      "field": "cmd",
+      "match": "ngrok",
+      "name": "ngrok",
+      "cat": "代理",
+      "note": "内网穿透"
+    },
+    {
+      "field": "cmd",
+      "match": "cloudflared",
+      "name": "Cloudflare Tunnel",
+      "cat": "代理",
+      "note": "隧道"
+    },
+    {
+      "field": "cmd",
+      "match": "playwright",
+      "name": "Playwright MCP",
+      "cat": "工具",
+      "note": "浏览器自动化"
+    },
+    {
+      "field": "cmd",
+      "match": "puppeteer",
+      "name": "Puppeteer",
+      "cat": "工具",
+      "note": "浏览器自动化"
+    },
+    {
+      "field": "cmd",
+      "match": "mcp",
+      "name": "MCP 服务",
+      "cat": "工具",
+      "note": "模型上下文协议"
+    },
+    {
+      "field": "cmd",
+      "match": "electron",
+      "name": "Electron 应用",
+      "cat": "工具",
+      "note": "桌面应用内嵌服务"
+    },
+    {
+      "field": "cmd",
+      "match": "adb",
+      "name": "ADB",
+      "cat": "工具",
+      "note": "Android 调试桥"
+    },
+    {
+      "field": "proc",
+      "match": "node",
+      "name": "Node 服务",
+      "cat": "工具",
+      "note": "Node.js 进程"
+    },
+    {
+      "field": "proc",
+      "match": "python",
+      "name": "Python 服务",
+      "cat": "工具",
+      "note": "Python 进程"
+    },
+    {
+      "field": "proc",
+      "match": "java",
+      "name": "Java 服务",
+      "cat": "工具",
+      "note": "JVM 进程"
+    },
+    {
+      "field": "proc",
+      "match": "dotnet",
+      "name": ".NET 服务",
+      "cat": "工具",
+      "note": ".NET 运行时"
+    },
+    {
+      "field": "proc",
+      "match": "ruby",
+      "name": "Ruby 服务",
+      "cat": "工具",
+      "note": "Ruby 进程"
+    },
+    {
+      "field": "proc",
+      "match": "php",
+      "name": "PHP 服务",
+      "cat": "工具",
+      "note": "PHP 进程"
+    },
+    {
+      "field": "proc",
+      "match": "go",
+      "name": "Go 服务",
+      "cat": "工具",
+      "note": "Go 进程"
+    },
+    {
+      "field": "proc",
+      "match": "rust",
+      "name": "Rust 服务",
+      "cat": "工具",
+      "note": "Rust 进程"
+    },
+    {
+      "field": "proc",
+      "match": "deno",
+      "name": "Deno 服务",
+      "cat": "工具",
+      "note": "Deno 运行时"
+    },
+    {
+      "field": "proc",
+      "match": "bun",
+      "name": "Bun 服务",
+      "cat": "工具",
+      "note": "Bun 运行时"
+    },
+    {
+      "field": "proc",
+      "match": "sshd",
+      "name": "SSH",
+      "cat": "系统",
+      "note": "远程登录"
+    },
+    {
+      "field": "proc",
+      "match": "vmms",
+      "name": "Hyper-V",
+      "cat": "系统",
+      "note": "虚拟机管理"
+    },
+    {
+      "field": "proc",
+      "match": "lsass",
+      "name": "LSASS",
+      "cat": "系统",
+      "note": "安全认证"
+    },
+    {
+      "field": "proc",
+      "match": "wininit",
+      "name": "Windows 初始化",
+      "cat": "系统",
+      "note": "系统启动进程"
+    },
+    {
+      "field": "proc",
+      "match": "services",
+      "name": "服务控制管理器",
+      "cat": "系统",
+      "note": "Windows 服务宿主"
+    },
+    {
+      "field": "proc",
+      "match": "svchost",
+      "name": "Windows 服务",
+      "cat": "系统",
+      "note": "系统服务宿主"
+    },
+    {
+      "field": "proc",
+      "match": "System",
+      "name": "系统内核",
+      "cat": "系统",
+      "note": "内核态服务"
+    },
+    {
+      "field": "proc",
+      "match": "spoolsv",
+      "name": "打印后台",
+      "cat": "系统",
+      "note": "打印服务"
+    },
+    {
+      "field": "proc",
+      "match": "dns",
+      "name": "DNS 服务",
+      "cat": "系统",
+      "note": "域名解析"
+    },
+    {
+      "field": "proc",
+      "match": "OneDrive",
+      "name": "OneDrive",
+      "cat": "应用",
+      "note": "云盘同步"
+    },
+    {
+      "field": "proc",
+      "match": "QQ",
+      "name": "QQ",
+      "cat": "应用",
+      "note": "腾讯 QQ"
+    },
+    {
+      "field": "proc",
+      "match": "WeChat",
+      "name": "微信",
+      "cat": "应用",
+      "note": "腾讯微信"
+    },
+    {
+      "field": "proc",
+      "match": "DingTalk",
+      "name": "钉钉",
+      "cat": "应用",
+      "note": "阿里钉钉"
+    },
+    {
+      "field": "proc",
+      "match": "Feishu",
+      "name": "飞书",
+      "cat": "应用",
+      "note": "字节飞书"
+    },
+    {
+      "field": "proc",
+      "match": "wps",
+      "name": "WPS Office",
+      "cat": "应用",
+      "note": "金山办公"
+    },
+    {
+      "field": "proc",
+      "match": "MuMu",
+      "name": "MuMu 模拟器",
+      "cat": "应用",
+      "note": "网易安卓模拟器"
+    },
+    {
+      "field": "proc",
+      "match": "GameViewer",
+      "name": "网易UU远程",
+      "cat": "应用",
+      "note": "网易远程控制"
+    },
+    {
+      "field": "proc",
+      "match": "Steam",
+      "name": "Steam",
+      "cat": "应用",
+      "note": "游戏平台"
+    },
+    {
+      "field": "proc",
+      "match": "Discord",
+      "name": "Discord",
+      "cat": "应用",
+      "note": "语音聊天"
+    },
+    {
+      "field": "proc",
+      "match": "Spotify",
+      "name": "Spotify",
+      "cat": "应用",
+      "note": "音乐流媒体"
+    },
+    {
+      "field": "proc",
+      "match": "chrome",
+      "name": "Chrome",
+      "cat": "应用",
+      "note": "浏览器"
+    },
+    {
+      "field": "proc",
+      "match": "msedge",
+      "name": "Edge",
+      "cat": "应用",
+      "note": "浏览器"
+    },
+    {
+      "field": "proc",
+      "match": "firefox",
+      "name": "Firefox",
+      "cat": "应用",
+      "note": "浏览器"
+    },
+    {
+      "field": "proc",
+      "match": "Code",
+      "name": "VS Code",
+      "cat": "工具",
+      "note": "代码编辑器"
+    },
+    {
+      "field": "proc",
+      "match": "Cursor",
+      "name": "Cursor",
+      "cat": "工具",
+      "note": "AI 代码编辑器"
+    },
+    {
+      "field": "proc",
+      "match": "idea",
+      "name": "IntelliJ IDEA",
+      "cat": "工具",
+      "note": "Java IDE"
+    },
+    {
+      "field": "proc",
+      "match": "pycharm",
+      "name": "PyCharm",
+      "cat": "工具",
+      "note": "Python IDE"
+    },
+    {
+      "field": "proc",
+      "match": "devenv",
+      "name": "Visual Studio",
+      "cat": "工具",
+      "note": "微软 IDE"
+    },
+    {
+      "field": "proc",
+      "match": "Trae",
+      "name": "Trae",
+      "cat": "工具",
+      "note": "AI 代码编辑器"
+    }
+  ],
+  "knownPorts": {
+    "22": {
+      "name": "SSH",
+      "cat": "系统",
+      "note": "安全远程登录"
+    },
+    "23": {
+      "name": "Telnet",
+      "cat": "系统",
+      "note": "明文远程登录（不安全）"
+    },
+    "53": {
+      "name": "DNS",
+      "cat": "系统",
+      "note": "域名解析"
+    },
+    "67": {
+      "name": "DHCP",
+      "cat": "系统",
+      "note": "地址分配"
+    },
+    "80": {
+      "name": "HTTP",
+      "cat": "工具",
+      "note": "Web 服务"
+    },
+    "110": {
+      "name": "POP3",
+      "cat": "工具",
+      "note": "邮件接收"
+    },
+    "135": {
+      "name": "RPC",
+      "cat": "系统",
+      "note": "Windows RPC 端点映射"
+    },
+    "139": {
+      "name": "NetBIOS",
+      "cat": "系统",
+      "note": "Windows 网络基本输入输出"
+    },
+    "143": {
+      "name": "IMAP",
+      "cat": "工具",
+      "note": "邮件接收"
+    },
+    "443": {
+      "name": "HTTPS",
+      "cat": "工具",
+      "note": "加密 Web 服务"
+    },
+    "445": {
+      "name": "SMB",
+      "cat": "系统",
+      "note": "Windows 文件共享"
+    },
+    "1234": {
+      "name": "LM Studio",
+      "cat": "模型",
+      "note": "本地大模型 API"
+    },
+    "1433": {
+      "name": "SQL Server",
+      "cat": "工具",
+      "note": "微软数据库"
+    },
+    "1521": {
+      "name": "Oracle",
+      "cat": "工具",
+      "note": "Oracle 数据库"
+    },
+    "1883": {
+      "name": "MQTT",
+      "cat": "工具",
+      "note": "物联网消息协议"
+    },
+    "1900": {
+      "name": "SSDP/UPnP",
+      "cat": "系统",
+      "note": "设备发现"
+    },
+    "1935": {
+      "name": "RTMP",
+      "cat": "工具",
+      "note": "直播推流"
+    },
+    "2179": {
+      "name": "Hyper-V",
+      "cat": "系统",
+      "note": "虚拟机管理"
+    },
+    "2181": {
+      "name": "ZooKeeper",
+      "cat": "工具",
+      "note": "分布式协调"
+    },
+    "2375": {
+      "name": "Docker API",
+      "cat": "工具",
+      "note": "Docker 未加密 API"
+    },
+    "2376": {
+      "name": "Docker TLS",
+      "cat": "工具",
+      "note": "Docker 加密 API"
+    },
+    "2379": {
+      "name": "etcd",
+      "cat": "工具",
+      "note": "分布式键值存储"
+    },
+    "3000": {
+      "name": "开发服务",
+      "cat": "工具",
+      "note": "Node / React 常用"
+    },
+    "3001": {
+      "name": "Grafana 备用",
+      "cat": "工具",
+      "note": "监控面板"
+    },
+    "3100": {
+      "name": "Grafana Loki",
+      "cat": "工具",
+      "note": "日志聚合"
+    },
+    "3306": {
+      "name": "MySQL",
+      "cat": "工具",
+      "note": "关系数据库"
+    },
+    "3389": {
+      "name": "RDP",
+      "cat": "系统",
+      "note": "远程桌面"
+    },
+    "4200": {
+      "name": "Angular",
+      "cat": "工具",
+      "note": "Angular CLI 默认端口"
+    },
+    "5000": {
+      "name": "Flask / 开发",
+      "cat": "工具",
+      "note": "Python Flask 常用"
+    },
+    "5173": {
+      "name": "Vite",
+      "cat": "工具",
+      "note": "Vite 默认端口"
+    },
+    "5353": {
+      "name": "mDNS",
+      "cat": "系统",
+      "note": "局域网服务发现"
+    },
+    "5432": {
+      "name": "PostgreSQL",
+      "cat": "工具",
+      "note": "关系数据库"
+    },
+    "5601": {
+      "name": "Kibana",
+      "cat": "工具",
+      "note": "ES 可视化"
+    },
+    "5672": {
+      "name": "RabbitMQ",
+      "cat": "工具",
+      "note": "消息队列 AMQP"
+    },
+    "6006": {
+      "name": "TensorBoard",
+      "cat": "模型",
+      "note": "训练可视化"
+    },
+    "6379": {
+      "name": "Redis",
+      "cat": "工具",
+      "note": "内存缓存"
+    },
+    "6443": {
+      "name": "Kubernetes API",
+      "cat": "工具",
+      "note": "K8s 控制面"
+    },
+    "7474": {
+      "name": "Neo4j",
+      "cat": "工具",
+      "note": "图数据库"
+    },
+    "7860": {
+      "name": "Gradio",
+      "cat": "模型",
+      "note": "AI 演示界面"
+    },
+    "8000": {
+      "name": "Django / 开发",
+      "cat": "工具",
+      "note": "Python Web 常用"
+    },
+    "8080": {
+      "name": "HTTP 备用",
+      "cat": "工具",
+      "note": "Tomcat / 通用 Web"
+    },
+    "8086": {
+      "name": "InfluxDB",
+      "cat": "工具",
+      "note": "时序数据库"
+    },
+    "8123": {
+      "name": "ClickHouse",
+      "cat": "工具",
+      "note": "列式数据库"
+    },
+    "8200": {
+      "name": "Vault",
+      "cat": "工具",
+      "note": "密钥管理"
+    },
+    "8443": {
+      "name": "HTTPS 备用",
+      "cat": "工具",
+      "note": "加密 Web 备用端口"
+    },
+    "8500": {
+      "name": "Consul",
+      "cat": "工具",
+      "note": "服务发现"
+    },
+    "8501": {
+      "name": "Streamlit",
+      "cat": "模型",
+      "note": "数据应用"
+    },
+    "8883": {
+      "name": "MQTT TLS",
+      "cat": "工具",
+      "note": "加密 MQTT"
+    },
+    "8888": {
+      "name": "Jupyter",
+      "cat": "工具",
+      "note": "笔记本默认端口"
+    },
+    "9042": {
+      "name": "Cassandra",
+      "cat": "工具",
+      "note": "分布式数据库"
+    },
+    "9090": {
+      "name": "Prometheus",
+      "cat": "工具",
+      "note": "监控采集"
+    },
+    "9092": {
+      "name": "Kafka",
+      "cat": "工具",
+      "note": "消息流平台"
+    },
+    "9200": {
+      "name": "Elasticsearch",
+      "cat": "工具",
+      "note": "搜索索引"
+    },
+    "10250": {
+      "name": "Kubelet",
+      "cat": "工具",
+      "note": "K8s 节点代理"
+    },
+    "11211": {
+      "name": "Memcached",
+      "cat": "工具",
+      "note": "内存缓存"
+    },
+    "11434": {
+      "name": "Ollama",
+      "cat": "模型",
+      "note": "本地大模型 API"
+    },
+    "15672": {
+      "name": "RabbitMQ 管理",
+      "cat": "工具",
+      "note": "RabbitMQ Web 控制台"
+    },
+    "27017": {
+      "name": "MongoDB",
+      "cat": "工具",
+      "note": "文档数据库"
+    }
+  },
+  "httpFingerprints": [
+    {
+      "header": "server",
+      "match": "uvicorn",
+      "name": "FastAPI 服务",
+      "cat": "工具",
+      "note": "Python ASGI 服务"
+    },
+    {
+      "header": "server",
+      "match": "werkzeug",
+      "name": "Flask 服务",
+      "cat": "工具",
+      "note": "Python WSGI 服务"
+    },
+    {
+      "header": "server",
+      "match": "express",
+      "name": "Express 服务",
+      "cat": "工具",
+      "note": "Node Web 框架"
+    },
+    {
+      "header": "server",
+      "match": "nginx",
+      "name": "Nginx",
+      "cat": "工具",
+      "note": "Web 服务器"
+    },
+    {
+      "header": "server",
+      "match": "apache",
+      "name": "Apache",
+      "cat": "工具",
+      "note": "Web 服务器"
+    },
+    {
+      "header": "server",
+      "match": "caddy",
+      "name": "Caddy",
+      "cat": "工具",
+      "note": "Web 服务器"
+    },
+    {
+      "header": "server",
+      "match": "gunicorn",
+      "name": "Gunicorn",
+      "cat": "工具",
+      "note": "Python WSGI"
+    },
+    {
+      "header": "server",
+      "match": "kestrel",
+      "name": "ASP.NET Core",
+      "cat": "工具",
+      "note": ".NET Web 服务"
+    },
+    {
+      "header": "server",
+      "match": "jetty",
+      "name": "Jetty",
+      "cat": "工具",
+      "note": "Java Web 容器"
+    },
+    {
+      "header": "server",
+      "match": "tomcat",
+      "name": "Tomcat",
+      "cat": "工具",
+      "note": "Java Web 容器"
+    },
+    {
+      "header": "x-powered-by",
+      "match": "express",
+      "name": "Express 服务",
+      "cat": "工具",
+      "note": "Node Web 框架"
+    },
+    {
+      "header": "x-powered-by",
+      "match": "php",
+      "name": "PHP 服务",
+      "cat": "工具",
+      "note": "PHP 后端"
+    },
+    {
+      "header": "x-powered-by",
+      "match": "asp.net",
+      "name": "ASP.NET",
+      "cat": "工具",
+      "note": ".NET 后端"
+    },
+    {
+      "header": "x-powered-by",
+      "match": "next.js",
+      "name": "Next.js",
+      "cat": "工具",
+      "note": "React 框架"
+    },
+    {
+      "header": "x-powered-by",
+      "match": "nuxt",
+      "name": "Nuxt",
+      "cat": "工具",
+      "note": "Vue 框架"
+    }
+  ],
+  "bannerFingerprints": [
+    {
+      "match": "SSH-",
+      "name": "SSH",
+      "cat": "系统",
+      "note": "SSH 服务端"
+    },
+    {
+      "match": "FTP",
+      "name": "FTP",
+      "cat": "工具",
+      "note": "文件传输"
+    },
+    {
+      "match": "SMTP",
+      "name": "SMTP",
+      "cat": "工具",
+      "note": "邮件发送"
+    },
+    {
+      "match": "MySQL",
+      "name": "MySQL",
+      "cat": "工具",
+      "note": "关系数据库"
+    },
+    {
+      "match": "PostgreSQL",
+      "name": "PostgreSQL",
+      "cat": "工具",
+      "note": "关系数据库"
+    },
+    {
+      "match": "REDIS",
+      "name": "Redis",
+      "cat": "工具",
+      "note": "内存缓存"
+    },
+    {
+      "match": "MongoDB",
+      "name": "MongoDB",
+      "cat": "工具",
+      "note": "文档数据库"
+    },
+    {
+      "match": "HTTP/",
+      "name": "HTTP 服务",
+      "cat": "工具",
+      "note": "明文 Web"
+    }
+  ],
+  "serviceNameMap": {
+    "sshd": {
+      "name": "SSH",
+      "cat": "系统",
+      "note": "OpenSSH 服务端"
+    },
+    "TermService": {
+      "name": "RDP",
+      "cat": "系统",
+      "note": "远程桌面服务"
+    },
+    "RpcEptMapper": {
+      "name": "RPC",
+      "cat": "系统",
+      "note": "RPC 端点映射"
+    },
+    "vmms": {
+      "name": "Hyper-V",
+      "cat": "系统",
+      "note": "虚拟机管理"
+    },
+    "CDPSvc": {
+      "name": "连接设备平台",
+      "cat": "系统",
+      "note": "设备发现与配对"
+    },
+    "iphlpsvc": {
+      "name": "IP Helper",
+      "cat": "系统",
+      "note": "IPv6 隧道与端口代理"
+    },
+    "Dnscache": {
+      "name": "DNS 客户端",
+      "cat": "系统",
+      "note": "DNS 缓存"
+    },
+    "LanmanServer": {
+      "name": "SMB 服务端",
+      "cat": "系统",
+      "note": "文件共享"
+    },
+    "Spooler": {
+      "name": "打印后台",
+      "cat": "系统",
+      "note": "打印队列"
+    },
+    "W32Time": {
+      "name": "时间同步",
+      "cat": "系统",
+      "note": "NTP 客户端"
+    },
+    "WinRM": {
+      "name": "WinRM",
+      "cat": "系统",
+      "note": "Windows 远程管理"
+    },
+    "WlanSvc": {
+      "name": "WLAN 服务",
+      "cat": "系统",
+      "note": "无线网络"
+    },
+    "BFE": {
+      "name": "基础筛选引擎",
+      "cat": "系统",
+      "note": "Windows 防火墙"
+    },
+    "Dhcp": {
+      "name": "DHCP 客户端",
+      "cat": "系统",
+      "note": "地址获取"
+    },
+    "EventLog": {
+      "name": "事件日志",
+      "cat": "系统",
+      "note": "系统日志"
+    },
+    "Schedule": {
+      "name": "任务计划",
+      "cat": "系统",
+      "note": "计划任务"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+﻿{
+    "name":  "portdeck",
+    "version":  "1.0.0",
+    "description":  "本机端口总控台 — 一眼看清每个端口在干什么，并且能直接点开",
+    "main":  "server.js",
+    "scripts":  {
+                    "start":  "node server.js"
+                },
+    "keywords":  [
+                     "port",
+                     "port-scanner",
+                     "dashboard",
+                     "localhost",
+                     "devtools",
+                     "windows",
+                     "netstat",
+                     "monitoring"
+                 ],
+    "author":  "GzxingR",
+    "license":  "MIT",
+    "repository":  {
+                       "type":  "git",
+                       "url":  "https://github.com/GzxingR/portdeck.git"
+                   },
+    "engines":  {
+                    "node":  "\u003e=18"
+                },
+    "files":  [
+                  "server.js",
+                  "ui.html",
+                  "ports.example.json",
+                  "rules.example.json",
+                  "supervise.ps1",
+                  "start-hidden.vbs",
+                  "README.md",
+                  "LICENSE"
+              ]
+}
